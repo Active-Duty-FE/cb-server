@@ -228,7 +228,7 @@ router.post(
       },
       function (err, attr) {
         if (err) return res.sendResult(null, 400, err);
-        res.sendResult(attr, 201, "创建成功");
+        res.sendResult(attr, 201, "추가 완료하였습니다.");
       }
     )(req, res, next);
   }
@@ -301,7 +301,7 @@ router.delete(
   function (req, res, next) {
     attrServ.deleteAttribute(req.params.attrId, function (err, newAttr) {
       if (err) return res.sendResult(null, 400, err);
-      res.sendResult(null, 200, "删除成功");
+      res.sendResult(null, 200, "삭제 완료하였습니다.");
     })(req, res, next);
   }
 );

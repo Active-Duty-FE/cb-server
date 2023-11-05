@@ -216,13 +216,13 @@ module.exports.login = function (username, password, cb) {
   logger.debug(username);
   managersDAO.findOne({ mg_name: username }, function (err, manager) {
     logger.debug(err);
-    if (err || !manager) return cb("用户名不存在");
+    if (err || !manager) return cb("아이디가 존재하지 않습니다.");
     if (manager.role_id < 0) {
-      return cb("该用户没有权限登录");
+      return cb("로그인 권한이 없스니다.");
     }
 
     if (manager.role_id != 0 && manager.mg_state != 1) {
-      return cb("该用户已经被禁用");
+      return cb("사용 금지 된 유저입니다.");
     }
 
     if (Password.verify(password, manager.mg_pwd)) {
@@ -234,7 +234,7 @@ module.exports.login = function (username, password, cb) {
         email: manager.mg_email,
       });
     } else {
-      return cb("密码错误");
+      return cb("비밀번호가 틀렸습니다.");
     }
   });
 };

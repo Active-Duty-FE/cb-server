@@ -109,7 +109,7 @@ router.delete(
   function (req, res, next) {
     roleServ.deleteRole(req.params.id, function (err, success) {
       if (err) return res.sendResult(null, 400, err);
-      res.sendResult(null, 200, "删除成功");
+      res.sendResult(null, 200, "삭제 완료하였습니다.");
     })(req, res, next);
   }
 );
@@ -131,7 +131,7 @@ router.post(
       req.body.rids,
       function (err, newRole) {
         if (err) return res.sendResult(null, 400, err);
-        res.sendResult(null, 200, "更新成功");
+        res.sendResult(null, 200, "롤 수정 성공");
       }
     )(req, res, next);
   }

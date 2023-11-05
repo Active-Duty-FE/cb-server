@@ -112,8 +112,8 @@ router.delete(
   // 业务逻辑
   function (req, res, next) {
     goodServ.deleteGood(req.params.id, function (err) {
-      if (err) return res.sendResult(null, 400, "删除失败");
-      else return res.sendResult(null, 200, "删除成功");
+      if (err) return res.sendResult(null, 400, "삭제 실패하였습니다.");
+      else return res.sendResult(null, 200, "삭제 완료하였습니다.");
     })(req, res, next);
   }
 );

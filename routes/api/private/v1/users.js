@@ -134,7 +134,7 @@ router.delete(
   function (req, res, next) {
     mgrServ.deleteManager(req.params.id, function (err) {
       if (err) return res.sendResult(null, 400, err);
-      return res.sendResult(null, 200, "删除成功");
+      return res.sendResult(null, 200, "삭제 성공하였습니다.");
     })(req, res, next);
   }
 );
@@ -189,7 +189,7 @@ router.put(
     if (req.params.state && req.params.state == "true") state = 1;
     mgrServ.updateMgrState(req.params.id, state, function (err, manager) {
       if (err) return res.sendResult(null, 400, err);
-      res.sendResult(manager, 200, "设置状态成功");
+      res.sendResult(manager, 200, "상태 변경 성공");
     })(req, res, next);
   }
 );
