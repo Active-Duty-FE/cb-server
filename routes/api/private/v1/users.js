@@ -85,7 +85,7 @@ router.post(
     };
     mgrServ.createManager(params, function (err, manager) {
       if (err) return res.sendResult(null, 400, err);
-      res.sendResult(manager, 201, "创建成功");
+      res.sendResult(manager, 201, "추가 완료하였습니다.");
     })(req, res, next);
   }
 );
