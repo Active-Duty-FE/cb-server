@@ -156,7 +156,7 @@ router.delete(
       req.params.rightId,
       function (err, result) {
         if (err) return res.sendResult(null, 400, err);
-        res.sendResult(result, 200, "取消权限成功");
+        res.sendResult(result, 200, "권한 삭제를 완료하였습니다.");
       }
     )(req, res, next);
   }
