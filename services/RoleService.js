@@ -190,7 +190,7 @@ module.exports.updateRoleRight = function (rid, rights, cb) {
   // 暂时实现
   //
   dao.update("RoleModel", rid, { ps_ids: rights }, function (err, newRole) {
-    if (err) return cb("更新权限失败");
+    if (err) return cb("권한 수정을 실패하였습니다.");
     cb(null, {
       roleId: newRole.role_id,
       roleName: newRole.role_name,

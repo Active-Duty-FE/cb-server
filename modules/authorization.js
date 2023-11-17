@@ -33,14 +33,14 @@ function Invocation(serviceName, actionName, serviceModule, origFunc) {
               origFunc.apply(serviceModule, origArguments);
             } else {
               console.log(pass, "pass");
-              res.sendResult(null, 401, "权限验证失败");
+              res.sendResult(null, 401, "권한 인증실패");
             }
           }
         );
       } else {
         console.log("2");
 
-        res.sendResult(null, 401, "权限验证失败");
+        res.sendResult(null, 401, "권한 인증실패");
       }
     };
   };

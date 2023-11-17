@@ -11,7 +11,7 @@ module.exports.getAllRights = function(type,cb) {
 
 	
 	dao.list(function(err,permissions){
-		if(err) return cb("获取权限数据失败");
+		if(err) return cb("권한 데이터 불러오기 실패");
 
 		if(type == "list") {
 			var result = [];

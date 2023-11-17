@@ -9,7 +9,7 @@ var permissionAPIDAO = require(path.join(process.cwd(),"dao/PermissionAPIDAO"));
  * @param  {Function} cb 回调函数
  */
 module.exports.getLeftMenus = function(userInfo,cb) {
-	if(!userInfo) return cb("无权限访问");
+	if(!userInfo) return cb("방문권한 없음");
 
 	
 
@@ -73,7 +73,7 @@ module.exports.getLeftMenus = function(userInfo,cb) {
 		authFn(rid,null,cb);
 	} else {
 		dao.show("RoleModel",userInfo.rid,function(err,role){
-			if(err || !role) return cb("无权限访问");
+			if(err || !role) return cb("방문권한 없음");
 			
 			
 			rolePermissions = role.ps_ids.split(",")
